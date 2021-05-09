@@ -1,0 +1,31 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+
+<GridPane fx:controller="net.hotelling.harold.zippylogs.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+  <VBox spacing="10">
+    <TableView fx:id="dataTable">
+      <columns>
+        <TableColumn text="Directory" prefWidth="200">
+          <cellValueFactory>
+            <PropertyValueFactory property="directoryName" />
+          </cellValueFactory>
+          <cellFactory>
+          </cellFactory>
+        </TableColumn>
+        <TableColumn text="Size" prefWidth="150" styleClass="col-directory-size">
+          <cellValueFactory>
+            <PropertyValueFactory property="directorySize" />
+          </cellValueFactory>
+          <cellFactory>
+          </cellFactory>
+        </TableColumn>
+      </columns>
+    </TableView>
+    <Button text="Add directory to track size" onAction="#pickADirectoryToWatch"/>
+    <Button text="Remove selected directory" onAction="#removeSelectedRow"/>
+    <Button text="Update directory sizes now" onAction="#updateDirectorySizes"/>
+  </VBox>
+</GridPane>
