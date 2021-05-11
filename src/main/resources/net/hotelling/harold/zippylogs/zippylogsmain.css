@@ -1,3 +1,7 @@
 .table-view .col-directory-size {
   -fx-alignment: CENTER-RIGHT;
 }
+
+* {
+  -fx-font-size: 16;
+}
